@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <ImageButton
+        android:id="@+id/police_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hospital_button"
+        android:layout_below="@+id/sos_button"
+        android:layout_marginTop="28dp"
+
+        android:src="@drawable/m"
+        android:contentDescription="@string/todo"
+        android:layout_alignStart="@+id/hospital_button" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hospital_button"
+        android:layout_below="@+id/hospital_button"
+        android:layout_marginLeft="16dp"
+        android:text="@string/hospital"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignStart="@+id/hospital_button"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sos_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sos"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView01"
+        android:layout_alignBottom="@+id/TextView01"
+        android:layout_alignRight="@+id/firestation_button"
+        android:text="@string/fire_station"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignEnd="@+id/firestation_button" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/police_button"
+        android:text="@string/police"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignStart="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/TextView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView03"
+        android:layout_below="@+id/ambulance_button"
+        android:text="@string/ambulance"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignStart="@+id/TextView03" />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/police_button"
+        android:text="@string/emergency_contact1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/home_button"
+        android:layout_alignLeft="@+id/bloodbank_button"
+        android:text="@string/blood_bank"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignStart="@+id/bloodbank_button" />
+
+    <ImageButton
+        android:id="@+id/hospital_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/police_button"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/bloodbank_button"
+
+
+        android:src="@drawable/k"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/bloodbank_button"
+        android:contentDescription="@string/todo" />
+
+    <ImageButton
+        android:id="@+id/sos_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/bloodbank_button"
+        android:layout_marginTop="18dp"
+
+        android:src="@drawable/red"
+        tools:ignore="OnClick"
+        android:contentDescription="@string/todo"
+        android:layout_alignEnd="@+id/bloodbank_button" />
+
+    <ImageButton
+        android:id="@+id/bloodbank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/police_button"
+        android:layout_centerHorizontal="true"
+
+        android:src="@drawable/amn"
+        android:contentDescription="@string/todo" />
+
+    <ImageButton
+        android:id="@+id/ambulance_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/settings_button"
+        android:layout_alignLeft="@+id/police_button"
+
+        android:src="@drawable/ambulance"
+        android:contentDescription="@string/todo"
+        android:layout_alignStart="@+id/police_button" />
+
+    <TextView
+        android:id="@+id/TextView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_button"
+        android:layout_centerHorizontal="true"
+        android:text="@string/settings"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView04"
+        android:layout_alignTop="@+id/home_button"
+
+        android:src="@drawable/icon_settings1"
+        android:layout_alignStart="@+id/TextView04"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/TextView08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_button"
+        android:layout_marginLeft="37dp"
+        android:layout_toRightOf="@+id/settings_button"
+        android:text="@string/home"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginStart="37dp"
+        android:layout_toEndOf="@+id/settings_button" />
+
+    <ImageButton
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TextView05"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/bloodbank_button"
+
+        android:src="@drawable/help_th"
+        android:contentDescription="@string/todo"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/bloodbank_button" />
+
+    <ImageButton
+        android:id="@+id/firestation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/help"
+        android:layout_alignTop="@+id/sos_button"
+
+        android:src="@drawable/fp__lg_fire"
+        android:contentDescription="@string/todo"
+        android:layout_alignStart="@+id/help" />
+
+    <ImageButton
+        android:id="@+id/home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="121dp"
+        android:layout_below="@+id/TextView05"
+        android:layout_alignLeft="@+id/help"
+        android:layout_alignRight="@+id/help"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="28dp"
+
+        android:src="@drawable/imag"
+        android:contentDescription="@string/todo"
+        android:layout_marginStart="0dp"
+        android:layout_alignEnd="@+id/help"
+        android:layout_alignStart="@+id/help" />
+
+</RelativeLayout>
+

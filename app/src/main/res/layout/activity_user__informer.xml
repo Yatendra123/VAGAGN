@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+        tools:context=".User_Informer">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_the_name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+
+        android:textSize="20sp"
+        android:hint="@string/krishna_kant"
+
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/enter_name"
+        android:inputType="text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_address"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+
+        android:textSize="20sp"
+        android:hint="@string/o_pacoket_ganga_nagar"
+        android:autofillHints=""
+        android:layout_marginEnd="20dp"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_phone_number"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="354dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+
+        android:textSize="20sp"
+        android:inputType="phone"
+        android:hint="@string/enter_10_digit_number"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/enter_home_phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_blood_group"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <Spinner
+        android:id="@+id/blood_type_spinner"
+        android:layout_width="354dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+
+        />
+    <!--
+        android:entries="@array/blood_type_spinner"-->
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:text="@string/update_user_information1"
+    android:layout_marginTop="20dp"
+    android:textStyle="bold"
+    android:id="@+id/updateData"
+    android:gravity="center"
+    />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/cancel"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:id="@+id/back_button"
+        android:gravity="center"
+        />
+    </LinearLayout>
+</ScrollView>

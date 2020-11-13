@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#E6DCE1D2"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_the_name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="354dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#FDFCFF"
+        android:textSize="20sp"
+        android:hint="@string/krishna_kant"
+
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/enter_name"
+        android:inputType="text" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_address"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="354dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#F8F7FA"
+        android:textSize="20sp"
+        android:hint="@string/o_pacoket_ganga_nagar"
+        android:autofillHints=""
+        android:layout_marginEnd="20dp"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_phone_number"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="354dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#F8F7FA"
+        android:textSize="20sp"
+        android:inputType="phone"
+        android:hint="@string/enter_10_digit_number"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/enter_home_phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_blood_group"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <Spinner
+        android:id="@+id/blood_type_spinner"
+        android:layout_width="354dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="#F1F0F3"
+
+        />
+    <!--
+        android:entries="@array/blood_type_spinner"-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_the_emergency_contact_name"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <EditText
+        android:id="@+id/name1"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#F8F7FA"
+        android:hint="@string/radha_krishna"
+        android:textSize="20sp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/emergency_contact"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/get_Number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/search" />
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/enter_the_emergency_contact_number"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="239dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="#F8F7FA"
+        android:hint="@string/enter_10_digit_number1"
+        android:inputType="phone"
+        android:textSize="20sp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@string/emergency_number" />
+
+    <Button
+        android:id="@+id/get_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search" />
+</LinearLayout>
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="372dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+
+        android:text="@string/save"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="367dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textStyle="bold" />
+
+</LinearLayout>
+</ScrollView>

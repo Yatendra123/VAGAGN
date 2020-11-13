@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".UpdateDemo">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+         />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:autofillHints="@string/radha_krishna"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_number"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:autofillHints="@string/krishna_kant"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/add"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/home"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+</LinearLayout>

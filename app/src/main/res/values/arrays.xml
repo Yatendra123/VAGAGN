@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blood_array">A ,A+,B,B+,O,O+</string-array>
+</resources>
