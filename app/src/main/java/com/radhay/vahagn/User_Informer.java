@@ -3,7 +3,6 @@ package com.radhay.vahagn;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -39,8 +38,7 @@ String[] strings = {"A-","A","A+","B-","B","B+","O-","O","O+","AB-","AB","AB+"};
         phone.setText(Setting.Phone);
         blood_type_spinner.setAdapter(new ArrayAdapter<>(User_Informer.this,
                 android.R.layout.simple_spinner_dropdown_item,strings));
-        //Cursor res=myd.getAllData();
-        //String blood=res.getString(5);
+
         blood_type_spinner.setSelection(pos-1);
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,6 +12,7 @@ public class DatabaseDemo extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="Home_Details";
     public  static final String Table_name="Personal_detail";
     public  static final String Table_name1="Contact_detail";
+    public  static final String Table_name2="location";
     public static final String Col_1 = "Name";
     public static final String Col_2 = "Address";
     public static final String Col_3 = "Phone";
@@ -20,6 +21,7 @@ public class DatabaseDemo extends SQLiteOpenHelper {
     public static final String Col_6 = "Contact_No";
     public static final String col1 = "Name";
     public static final String col2 = "E_Contact";
+    public static final String col11 = "loc";
     public DatabaseDemo(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -29,12 +31,14 @@ public class DatabaseDemo extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "+Table_name+" (Name TEXT,Address TEXT,Phone NUM,blood_type TEXT,Contact_Name TEXT,Contact_No NUM not null primary key)");
         db.execSQL("create table "+Table_name1+" (Name TEXT,E_Contact NUM NOT Null primary key)");
+        db.execSQL("create table "+Table_name2+"(loc TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+Table_name);
         db.execSQL("DROP TABLE IF EXISTS "+Table_name1);
+        db.execSQL("DROP TABLE IF EXISTS "+Table_name2);
         onCreate(db);
     }
 
@@ -73,6 +77,31 @@ public class DatabaseDemo extends SQLiteOpenHelper {
     public Cursor setData(){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.rawQuery("select * from "+Table_name1,null);
+    }
+    public boolean addlocation(String location){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(col1, location);
+            long result = db.insert(Table_name2, null, contentValues);
+            return result != -1;
+        }catch (Exception e){
+            return false;
+        }
+    }
+    public boolean updateloc(String loc1){
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.execSQL("update " + Table_name2 + " set loc='" + loc1);
+            return  true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public Cursor getloc(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from "+Table_name2,null);
     }
     public boolean updateData(String Contact_name, String Contact_no){
         try {

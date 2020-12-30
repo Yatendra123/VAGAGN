@@ -1,29 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".BloodBank">
+    android:orientation="horizontal" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:ignore="UselessParent">
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/deviice_owner"
-            android:layout_marginLeft="170dp"
-            android:layout_marginStart="170dp" />
-        <TextView
-            android:layout_width="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="@string/device_owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="82dp"
+                android:layout_marginTop="0dp"/>
+            <TextView
+                android:text="@string/guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="0dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="@string/guest"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                />
+
+           <CheckBox
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               />
+
+            <EditText
+                android:id="@+id/guest_name_field"
+                android:layout_width="207dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:hint="@string/guest_name"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:id="@+id/blood_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/blood_type" />
+            <CheckBox
+                android:id="@+id/blood_type_checkBox"
+               android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:checked="false" />
+
+            <Spinner
+                android:id="@+id/blood_type_spinner"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:drawSelectorOnTop="true"
+
+              />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/number" />
+
+            <CheckBox
+                android:id="@+id/phone_number_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:checked="false" />
+
+            <EditText
+                android:id="@+id/guest_phone_number_field"
+                android:layout_width="273dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/guest_phone_number"
+                android:inputType="phone"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/location" />
+            <EditText
+                android:id="@+id/location_field"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:hint="@string/enter_location"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/preview_s"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/preview"
+            />
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@string/home"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/get_location"
+            android:text="@string/get_current_location"
+            android:layout_marginTop="22dp"
             />
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

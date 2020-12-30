@@ -15,6 +15,7 @@ import android.provider.Settings;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,20 +38,26 @@ public class MainActivity extends AppCompatActivity {
     ImageButton help;
     ImageButton hospital_button;
     ImageButton home_button;
+    ImageButton blood_bank;
     MainActivity receiver;
     ImageButton setting_button;
     DatabaseDemo myd;
+    TextView textView3;
+    private boolean p=false;
+    private String loc="NA";
     double latitude=0,longitude=0;
     FusedLocationProviderClient fusedLocationProviderClient;
-    private static String addressDemo="NA";
+    private static String addressDemo="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myd = new DatabaseDemo(this);
         setting_button = findViewById(R.id.settings_button);
+        textView3 = findViewById(R.id.textView3);
         home_button = findViewById(R.id.home_button);
         hospital_button  = findViewById(R.id.hospital_button);
+        blood_bank =findViewById(R.id.bloodbank_button);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         getLocationDemo();
         home_button.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +72,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Setting.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+        textView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getLocationDemo();
+                if (p){
+                    myd.updateloc(addressDemo.toString());
+                    Toast.makeText(MainActivity.this,"Location already fatched",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         receiver = new MainActivity();
@@ -82,19 +100,26 @@ public class MainActivity extends AppCompatActivity {
                         while (res.moveToNext()) {
                             String number = res.getString(1);
                             //          String messagebody = "ok "+addressDemo;
+                            if(addressDemo.equals("")){
+                                textView3.setText("Please Ensure Your Location: "+addressDemo+" \nSomething Wrong Click me to Correct This");
+                                textView3.setBackgroundColor(0xFFB30000);
+                            }else {
+                                String messagebody = "Hi everyone i need suddenly help at " + addressDemo;
+                                String sh1 = " (" + "https://www.google.com/maps/search/?api=1&query=" + latitude + "," + longitude + ")\nPlease help me";
+                                if(loc.equals("False")) {
+                                    textView3.setText("Please Ensure Your Location: " + addressDemo + " \nSomething Wrong Click me to Correct This");
+                                    textView3.setBackgroundColor(0xFFB30000);
+                                }
+                                System.out.println(messagebody);
+                                try {
+                                    sms.sendTextMessage(number, null, messagebody, null, null);
+                                    sms.sendTextMessage(number, null, sh1, null, null);
+                                    Toast.makeText(getApplicationContext(), "Message Sent Succusfully !!", Toast.LENGTH_LONG).show();
 
-                            String messagebody = "Hi Guys i need suddenly Accident help at " + "https://www.google.com/maps/search/?api=1&query=" + latitude + "," + longitude;
-                            String sh1 = " (" + addressDemo + ")\nPlease help me";
-
-                            System.out.println(messagebody);
-                            try {
-                                sms.sendTextMessage(number, null, messagebody, null, null);
-                                sms.sendTextMessage(number, null, sh1, null, null);
-                                Toast.makeText(getApplicationContext(), "Message Sent Succusfully !!", Toast.LENGTH_LONG).show();
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                                Toast.makeText(getApplicationContext(), "Message Failed", Toast.LENGTH_LONG).show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                    Toast.makeText(getApplicationContext(), "Message Failed", Toast.LENGTH_LONG).show();
+                                }
                             }
                         }
                     }else{
@@ -118,6 +143,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,MapDemo.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        blood_bank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,BloodBank.class);
                 startActivity(intent);
                 finish();
             }
@@ -157,13 +190,21 @@ public class MainActivity extends AppCompatActivity {
                                 Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
                                 List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
                                 addressDemo = addresses.get(0).getAddressLine(0);
-
+                                textView3.setText("Your Current Location: "+addressDemo+"\nplease sure your location otherwise click me!");
+                                p=true;
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
 
                         } else {
                             Toast.makeText(MainActivity.this, "location not fatech", Toast.LENGTH_LONG).show();
+                            Cursor cursor=myd.getloc();
+                            if(cursor.moveToFirst()){
+                                addressDemo=cursor.getString(1);
+                            }
+                            textView3.setText("This can be Last Location: "+addressDemo);
+                           loc = "False";
+                           p=false;
                         }
                     }
                 });
@@ -192,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    private  boolean isLocationEnabled(){
+    protected  boolean isLocationEnabled(){
         LocationManager locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }

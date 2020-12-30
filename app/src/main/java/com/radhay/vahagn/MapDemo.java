@@ -65,7 +65,7 @@ public class MapDemo extends AppCompatActivity {
                      if (isLocationEnabled()) {
                          final String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
                                  "location=" + currentLat + "," + currentLng +
-                                 "&radius=100000" + "&types=hospital" +
+                                 "&radius=1000" + "&types=hospital" +
                                  "&sensor=true" +
                                  "&key=" + getResources().getString(R.string.google_map_key);
                          map.clear();

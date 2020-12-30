@@ -31,6 +31,7 @@ Button save_button;
 Button get_Name;
 Button get_Number;
 DatabaseDemo myd;
+protected static String name_s="";
 protected static int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ protected static int pos;
         ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION)==PackageManager.PERMISSION_GRANTED){
              Cursor cursor=myd.getAllData();
      if (cursor.moveToNext()){
+         boolean s= myd.addlocation("Something Wrong in Loaction please wait!");
+         if(s){}
             Intent intent = new Intent(Registration.this,MainActivity.class);
             startActivity(intent);
             finish();
@@ -61,6 +64,7 @@ protected static int pos;
         name  = findViewById(R.id.name);
         phone = findViewById(R.id.phone);
         address = findViewById(R.id.address);
+
         blood_type_spinner = findViewById(R.id.blood_type_spinner);
                 get_Name = findViewById(R.id.get_Name);
         get_Number = findViewById(R.id.get_Number);
